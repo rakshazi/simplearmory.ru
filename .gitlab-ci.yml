@@ -1,12 +1,13 @@
 variables:
   REMOTE: git@github.com:rakshazi/simplearmory.ru.git
 stages:
+  - patch
   - build
   - deploy
 
 patch:
   image: php:alpine
-  stage: build
+  stage: patch
   only:
     - master
   before_script:
