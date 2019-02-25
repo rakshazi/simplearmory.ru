@@ -35,10 +35,15 @@ build:
     - npm install
     - bower install --allow-root
     - grunt
+  cache:
+    key: dependencies
+    paths:
+      - SimpleArmory/node_modules
+      - SimpleArmory/bower_components
   artifacts:
     name: dist
     paths:
-      - dist/
+      - SimpleArmory/dist/
   tags:
     - docker
 
@@ -57,7 +62,7 @@ deploy:
     - ssh-add
     - rm -rf .git
   script:
-    - cd dist
+    - cd SimpleArmory/dist
     - git init
     - git remote add origin $REMOTE
     - git config user.email "me+github@rakshazi.me"
