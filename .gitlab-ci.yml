@@ -1,0 +1,67 @@
+variables:
+  REMOTE: git@github.com:rakshazi/forestguild.club.git
+stages:
+  - build
+  - deploy
+
+patch:
+  image: php:alpine
+  stage: build
+  only:
+    - master
+  before_script:
+    - git clone https://github.com/kevinclement/SimpleArmory.git
+  script:
+    - php patch.php
+  artifacts:
+    name: sa
+    paths:
+      - SimpleArmory/
+  tags:
+    - docker
+
+build:
+  image: node:8-alpine
+  stage: build
+  only:
+    - master
+  before_script:
+    - apk --no-cache add build-base autoconf automake git nasm zlib-dev zlib
+    - npm install -g grunt-cli bower
+  script:
+    - cd SimpleArmory
+    - npm install
+    - bower install --allow-root
+    - grunt
+  artifacts:
+    name: dist
+    paths:
+      - dist/
+  tags:
+    - docker
+
+deploy:
+  image: alpine:latest
+  stage: deploy
+  only:
+    - master
+  before_script:
+    - apk add --no-cache git openssh-client
+    - mkdir -p ~/.ssh
+    - echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
+    - chmod 600 ~/.ssh/id_rsa
+    - echo -e "Host *\n\tStrictHostKeyChecking no" > ~/.ssh/config
+    - eval $(ssh-agent -s)
+    - ssh-add
+    - rm -rf .git
+  script:
+    - cd dist
+    - git init
+    - git remote add origin $REMOTE
+    - git config user.email "me+github@rakshazi.me"
+    - git config user.name GitlabCI
+    - git add --all
+    - git commit -a -q -m Update
+    - git push --no-thin --force origin HEAD:gh-pages
+  tags:
+    - docker
