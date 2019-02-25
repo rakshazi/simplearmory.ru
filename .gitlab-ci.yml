@@ -10,6 +10,7 @@ patch:
   only:
     - master
   before_script:
+    - apk --no-cache add git
     - git clone https://github.com/kevinclement/SimpleArmory.git
   script:
     - php patch.php
