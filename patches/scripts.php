@@ -20,6 +20,10 @@ return [
         "'Legacy';" => "'Наследие';",
         "'Feats of Strength';" => "'Великие подвиги';",
     ],
+    'app/scripts/services/achievements.service.js' => [
+        'Feats of Strength' => 'Великие подвиги',
+        'Legacy' => 'Наследие',
+    ],
     'app/scripts/controllers/calendar.controller.js' => [
         'January' => 'Январь',
         'February' => 'Февраль',
