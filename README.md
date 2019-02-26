@@ -4,22 +4,14 @@ UNDER DEVELOPMENT.
 
 ## Development
 
-### Build
+### Build & Run
 
 ```bash
 git clone https://github.com/kevinclement/SimpleArmory.git
-php patch.php
-npm install
-npm install -g grunt-cli bower
-bower install
+./dev.sh
 ```
 
-### Run
-
-```bash
-grunt serve
-xdg-open http://localhost:9001
-```
+Open [localhost:9001](http://localhost:9001)
 
 ### Contribute
 
