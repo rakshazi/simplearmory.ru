@@ -2,6 +2,7 @@
 return [
     'app/index.html' => [
         'Simple Armory' => 'Простая Оружейная',
+        'Simplified armory site for World of Warcraft' => 'Упрощенный сайт Оружейной для World of Warcraft',
     ],
     'app/views/achievements.html' => [
         'Achievements ' => 'Достижения ',
