@@ -9,10 +9,12 @@ UNDER DEVELOPMENT.
 * Reputation - done
 * Achievements - done
 * Factions - done
-* Collections/Mounts - in progress
-* Collections/Companions - in progress
+* Collections/Mounts - done
 * Collections/Battle Pets - done
+* Collections/Companions - in progress
 * Collections/Toys - in progress
+* Planner - in progress
+* Servers - in progress
 
 ## Development
 
