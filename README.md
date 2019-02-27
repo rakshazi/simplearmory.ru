@@ -8,9 +8,10 @@ UNDER DEVELOPMENT.
 * Calendar - done
 * Reputation - done
 * Achievements - done
+* Factions - in progress
 * Collections/Mounts - in progress
 * Collections/Companions - in progress
-* Collections/Battle Pets - in progress
+* Collections/Battle Pets - done
 * Collections/Toys - in progress
 
 ## Development
