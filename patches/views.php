@@ -1,7 +1,7 @@
 <?php
 return [
     'app/styles/main.css' => [
-        'width: 175px;' => 'width: 220px;', //Faction's label on reputation page. 175px is too small for russian names of factions, 220px - ok.
+        'width: 175px;' => 'width: 300px;', //Faction's label on reputation page. 175px is too small for russian names of factions, 300px - ok.
     ],
     'app/index.html' => [
         'Simple Armory' => 'Простая Оружейная',
