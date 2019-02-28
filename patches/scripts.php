@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 return [
     'Gruntfile.js' => [
         "'localhost'," => "'0.0.0.0',", //only for dev with docker purposes

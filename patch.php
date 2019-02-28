@@ -1,10 +1,11 @@
 <?php
 
+declare(strict_types=1);
 /**
- * Patch $file with translations
+ * Patch $file with translations.
+ *
  * @param string $file Inside SimpleArmory/ dir
- * @param array $l18n Translations, eg: ["Quests" => "Задания"]
- * @return void
+ * @param array  $l18n Translations, eg: ["Quests" => "Задания"]
  */
 function patch(string $file, array $l18n): void
 {
@@ -13,12 +14,10 @@ function patch(string $file, array $l18n): void
     file_put_contents('./SimpleArmory/'.$file, $text);
 }
 
-/**
- * Get all patch files and apply them to Simple Armory
- */
-foreach(glob('./patches/*.php') as $patchfile) {
+// Get all patch files and apply them to Simple Armory
+foreach (glob('./patches/*.php') as $patchfile) {
     $patches = include $patchfile;
-    foreach($patches as $file => $l18n) {
+    foreach ($patches as $file => $l18n) {
         patch($file, $l18n);
     }
 }

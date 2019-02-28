@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 return [
     'app/data/mounts.json' => [
         '"Battle for Azeroth"' => '"Битва за Азерот"',

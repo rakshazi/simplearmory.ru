@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 return [
     'app/styles/main.css' => [
         'width: 175px;' => 'width: 300px;', //Faction's label on reputation page. 175px is too small for russian names of factions, 300px - ok.
@@ -24,7 +27,7 @@ return [
     ],
     'app/views/error.html' => [
         'Error' => 'Ошибка',
-        "Could not fetch '{{ character }}' from server '{{ realm }}'. Click <a href=\"#/\">here</a> to try again." => "Не получается найти '{{ character }}' с сервера '{{ realm }}'. Кликни <a href=\"#/\">сюда</a> чтобы попробовать еще раз."
+        "Could not fetch '{{ character }}' from server '{{ realm }}'. Click <a href=\"#/\">here</a> to try again." => "Не получается найти '{{ character }}' с сервера '{{ realm }}'. Кликни <a href=\"#/\">сюда</a> чтобы попробовать еще раз.",
     ],
     'app/views/header.html' => [
         'Overview' => 'Обзор',

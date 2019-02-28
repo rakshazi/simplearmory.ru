@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 return [
     'app/data/pets.json' => [
         '"Battle for Azeroth"' => '"Битва за Азерот"',
